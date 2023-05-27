@@ -16,7 +16,6 @@ function exportData(customerName, funnel, startDate, endDate) {
       console.error("Error retrieving data:", err.message);
       return;
     }
-    console.log(JSON.stringify(rows));
     fastcsv
       .write(rows, { headers: true })
       .on("finish", () => {
